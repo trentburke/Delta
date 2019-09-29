@@ -300,11 +300,11 @@
                                         <rect key="frame" x="0.0" y="786" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JPg-6O-DRe" id="zcZ-QR-Nno">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="356" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sync Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1u0-gh-zP7">
-                                                    <rect key="frame" x="16" y="0.0" width="324" height="44"/>
+                                                    <rect key="frame" x="15" y="0.0" width="333" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -324,11 +324,11 @@
                                         <rect key="frame" x="0.0" y="885.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SSL-t4-QZj" id="hQB-Iy-bzy">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="356" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="App Icon Shortcuts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c5i-qG-ir9">
-                                                    <rect key="frame" x="16" y="0.0" width="324" height="44"/>
+                                                    <rect key="frame" x="15" y="0.0" width="333" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -583,7 +583,7 @@
         <scene sceneID="e9N-fv-yuQ">
             <objects>
                 <tableViewController id="yXS-6u-1AN" customClass="AppIconShortcutsViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="97" sectionHeaderHeight="18" sectionFooterHeight="18" id="BGy-Nh-8Yd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="BGy-Nh-8Yd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
