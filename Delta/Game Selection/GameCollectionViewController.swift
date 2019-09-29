@@ -665,6 +665,13 @@ private extension GameCollectionViewController
         let actions = self.actions(for: game)
         
         let alertController = UIAlertController(actions: actions)
+        if let popoverController = alertController.popoverPresentationController {
+            
+            popoverController.sourceView = self.collectionView.cellForItem(at: indexPath)?.contentView
+            if let itemRect = collectionView.layoutAttributesForItem(at: indexPath) {
+                popoverController.sourceRect = itemRect.bounds
+            }
+        }
         self.present(alertController, animated: true, completion: nil)
     }
 }
