@@ -126,7 +126,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1AC0A77D7D4F472C1693D90C57B90DD5"
+               BlueprintIdentifier = "1FA9B463D7545DEE19FBE853AC3BFD31"
                BuildableName = "Pods_Delta.framework"
                BlueprintName = "Pods-Delta"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -141,7 +141,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BFFA71D61AAC406100EE9DD1"
-               BuildableName = "Delta.app"
+               BuildableName = "Delta Coofdy.app"
                BlueprintName = "Delta"
                ReferencedContainer = "container:Delta.xcodeproj">
             </BuildableReference>
@@ -153,19 +153,17 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BFFA71D61AAC406100EE9DD1"
-            BuildableName = "Delta.app"
+            BuildableName = "Delta Coofdy.app"
             BlueprintName = "Delta"
             ReferencedContainer = "container:Delta.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -182,7 +180,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BFFA71D61AAC406100EE9DD1"
-            BuildableName = "Delta.app"
+            BuildableName = "Delta Coofdy.app"
             BlueprintName = "Delta"
             ReferencedContainer = "container:Delta.xcodeproj">
          </BuildableReference>
@@ -208,8 +206,6 @@
             isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -222,7 +218,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BFFA71D61AAC406100EE9DD1"
-            BuildableName = "Delta.app"
+            BuildableName = "Delta Coofdy.app"
             BlueprintName = "Delta"
             ReferencedContainer = "container:Delta.xcodeproj">
          </BuildableReference>
