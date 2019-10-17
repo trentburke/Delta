@@ -103,8 +103,26 @@ extension GamesViewController
         self.pageControl.centerXAnchor.constraint(equalTo: (self.navigationController?.toolbar.centerXAnchor)!, constant: 0).isActive = true
         self.pageControl.centerYAnchor.constraint(equalTo: (self.navigationController?.toolbar.centerYAnchor)!, constant: 0).isActive = true
         
-        self.navigationController?.navigationBar.barStyle = .blackTranslucent
-        self.navigationController?.toolbar.barStyle = .blackTranslucent
+        if let navigationController = self.navigationController
+        {
+            if #available(iOS 13.0, *)
+            {
+                navigationController.overrideUserInterfaceStyle = .dark
+                
+                let navigationBarAppearance = navigationController.navigationBar.standardAppearance.copy()
+                navigationBarAppearance.backgroundEffect = UIBlurEffect(style: .dark)
+                navigationController.navigationBar.standardAppearance = navigationBarAppearance
+                
+                let toolbarAppearance = navigationController.toolbar.standardAppearance.copy()
+                toolbarAppearance.backgroundEffect = UIBlurEffect(style: .dark)
+                navigationController.toolbar.standardAppearance = toolbarAppearance                
+            }
+            else
+            {
+                navigationController.navigationBar.barStyle = .blackTranslucent
+                navigationController.toolbar.barStyle = .blackTranslucent
+            }            
+        }
         
         self.prepareSearchController()
         
@@ -141,16 +159,27 @@ extension GamesViewController
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        guard let identifier = segue.identifier, identifier == "embedPageViewController" else { return }
+        guard let identifier = segue.identifier else { return }
         
-        self.pageViewController = segue.destination as? UIPageViewController
-        self.pageViewController.dataSource = self
-        self.pageViewController.delegate = self
-        self.pageViewController.view.isHidden = true
+        switch identifier
+        {
+        case "embedPageViewController":
+            self.pageViewController = segue.destination as? UIPageViewController
+            self.pageViewController.dataSource = self
+            self.pageViewController.delegate = self
+            self.pageViewController.view.isHidden = true
+        
+        case "showSettings":
+            let destinationViewController = segue.destination
+            destinationViewController.presentationController?.delegate = self
+            
+        default: break
+        }
     }
     
     @IBAction private func unwindFromSettingsViewController(_ segue: UIStoryboardSegue)
     {
+        self.sync()
     }
 }
 
@@ -330,6 +359,8 @@ extension GamesViewController: ImportControllerDelegate
         documentTypes.insert("com.rileytestut.gba")
         documentTypes.insert("com.rileytestut.gbc")
         documentTypes.insert("com.rileytestut.gb")
+        
+        documentTypes.insert("com.rileytestut.delta.skin")
         
         let itunesImportOption = iTunesImportOption(presentingViewController: self)
         
@@ -539,5 +570,13 @@ extension GamesViewController: NSFetchedResultsControllerDelegate
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
     {
         self.updateSections(animated: true)
+    }
+}
+
+extension GamesViewController: UIAdaptivePresentationControllerDelegate
+{
+    func presentationControllerWillDismiss(_ presentationController: UIPresentationController)
+    {
+        self.sync()
     }
 }

@@ -20,6 +20,7 @@ private extension SettingsViewController
         case controllers
         case controllerSkins
         case controllerOpacity
+        case hapticFeedback
         case syncing
         case threeDTouch
         case patreon
@@ -51,6 +52,9 @@ class SettingsViewController: UITableViewController
 {
     @IBOutlet private var controllerOpacityLabel: UILabel!
     @IBOutlet private var controllerOpacitySlider: UISlider!
+    
+    @IBOutlet private var buttonHapticFeedbackEnabledSwitch: UISwitch!
+    @IBOutlet private var thumbstickHapticFeedbackEnabledSwitch: UISwitch!
     
     @IBOutlet private var versionLabel: UILabel!
     
@@ -162,6 +166,9 @@ private extension SettingsViewController
             print(error)
         }
         
+        self.buttonHapticFeedbackEnabledSwitch.isOn = Settings.isButtonHapticFeedbackEnabled
+        self.thumbstickHapticFeedbackEnabledSwitch.isOn = Settings.isThumbstickHapticFeedbackEnabled
+        
         self.tableView.reloadData()
     }
     
@@ -213,6 +220,16 @@ private extension SettingsViewController
         self.selectionFeedbackGenerator = nil
     }
     
+    @IBAction func toggleButtonHapticFeedbackEnabled(_ sender: UISwitch)
+    {
+        Settings.isButtonHapticFeedbackEnabled = sender.isOn
+    }
+    
+    @IBAction func toggleThumbstickHapticFeedbackEnabled(_ sender: UISwitch)
+    {
+        Settings.isThumbstickHapticFeedbackEnabled = sender.isOn
+    }
+    
     func openTwitter(username: String)
     {
         let twitterAppURL = URL(string: "twitter://user?screen_name=" + username)!
@@ -244,7 +261,6 @@ private extension SettingsViewController
         
         switch settingsName
         {
-        case .localControllerPlayerIndex, .preferredControllerSkin, .translucentControllerSkinOpacity: break
         case .syncingService:
             let selectedIndexPath = self.tableView.indexPathForSelectedRow
             
@@ -255,6 +271,8 @@ private extension SettingsViewController
             {
                 self.tableView.selectRow(at: selectedIndexPath, animated: true, scrollPosition: .none)
             }
+            
+        case .localControllerPlayerIndex, .preferredControllerSkin, .translucentControllerSkinOpacity, .isButtonHapticFeedbackEnabled, .isThumbstickHapticFeedbackEnabled: break
         }
     }
 
@@ -315,7 +333,7 @@ extension SettingsViewController
             
         case .controllerSkins:
             cell.textLabel?.text = System.registeredSystems[indexPath.row].localizedName
-            
+                        
         case .syncing:
             switch SyncingRow.allCases[indexPath.row]
             {
@@ -327,7 +345,7 @@ extension SettingsViewController
             case .service: break
             }
             
-        case .controllerOpacity, .threeDTouch, .patreon, .credits: break
+        case .controllerOpacity, .hapticFeedback, .threeDTouch, .patreon, .credits: break
         }
 
         return cell
@@ -342,16 +360,18 @@ extension SettingsViewController
         {
         case .controllers: self.performSegue(withIdentifier: Segue.controllers.rawValue, sender: cell)
         case .controllerSkins: self.performSegue(withIdentifier: Segue.controllerSkins.rawValue, sender: cell)
-        case .controllerOpacity, .threeDTouch, .syncing: break
+        case .controllerOpacity, .hapticFeedback, .threeDTouch, .syncing: break
         case .patreon:
             let patreonURL = URL(string: "altstore://patreon")!
             
             UIApplication.shared.open(patreonURL, options: [:]) { (success) in
                 guard !success else { return }
                 
-                let alertController = UIAlertController(title: NSLocalizedString("AltStore Not Installed", comment: ""), message: NSLocalizedString("You must have AltStore installed to receive Patreon benefits.", comment: ""), preferredStyle: .alert)
-                alertController.addAction(.ok)
-                self.present(alertController, animated: true, completion: nil)
+                let patreonURL = URL(string: "https://www.patreon.com/rileytestut")!
+                
+                let safariViewController = SFSafariViewController(url: patreonURL)
+                safariViewController.preferredControlTintColor = .deltaPurple
+                self.present(safariViewController, animated: true, completion: nil)
             }
             
             tableView.deselectRow(at: indexPath, animated: true)

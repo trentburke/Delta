@@ -549,6 +549,9 @@ private extension GameViewController
             
             self.shouldResetSustainedInputs = false
         }
+        
+        self.controllerView.isButtonHapticFeedbackEnabled = Settings.isButtonHapticFeedbackEnabled
+        self.controllerView.isThumbstickHapticFeedbackEnabled = Settings.isThumbstickHapticFeedbackEnabled
     }
     
     func updateControllerSkin()
@@ -559,6 +562,8 @@ private extension GameViewController
         
         let controllerSkin = Settings.preferredControllerSkin(for: system, traits: traits)
         self.controllerView.controllerSkin = controllerSkin
+        
+        self.view.setNeedsUpdateConstraints()
     }
 }
 
@@ -1001,8 +1006,9 @@ private extension GameViewController
         
         switch settingsName
         {
-        case .localControllerPlayerIndex: self.updateControllers()
-            
+        case .localControllerPlayerIndex, .isButtonHapticFeedbackEnabled, .isThumbstickHapticFeedbackEnabled:
+            self.updateControllers()
+
         case .preferredControllerSkin:
             guard
                 let system = notification.userInfo?[Settings.NotificationUserInfoKey.system] as? System,
