@@ -134,6 +134,7 @@
 		BFB359442278FD7E00CFD920 /* N64DeltaCore_Video.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFB359412278FD6700CFD920 /* N64DeltaCore_Video.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFB359452278FD8100CFD920 /* N64DeltaCore_RSP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB359422278FD6800CFD920 /* N64DeltaCore_RSP.framework */; };
 		BFB359462278FD8100CFD920 /* N64DeltaCore_RSP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFB359422278FD6800CFD920 /* N64DeltaCore_RSP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFB3645823245A6000CD0EB1 /* LicensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3645723245A6000CD0EB1 /* LicensesViewController.swift */; };
 		BFBAB2E31EB685A2004E0B0E /* DeltaCoreProtocol+Delta.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAB2E21EB685A2004E0B0E /* DeltaCoreProtocol+Delta.swift */; };
 		BFC1F2CC22F9515F00606A45 /* CopyDeepLinkActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1F2CB22F9515F00606A45 /* CopyDeepLinkActivity.swift */; };
 		BFC3628021ADE2BA00EF2BE6 /* UIAlertController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC3627F21ADE2BA00EF2BE6 /* UIAlertController+Error.swift */; };
@@ -141,6 +142,7 @@
 		BFC9B7391CEFCD34008629BB /* CheatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9B7381CEFCD34008629BB /* CheatsViewController.swift */; };
 		BFCEA67E1D56FF640061A534 /* UIViewControllerContextTransitioning+Conveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCEA67D1D56FF640061A534 /* UIViewControllerContextTransitioning+Conveniences.swift */; };
 		BFD097211D3A01B8005A44C2 /* SaveStatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3540041C5DA70400C1184C /* SaveStatesViewController.swift */; };
+		BFD1EF402336BD8800D197CF /* UIDevice+Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD1EF3F2336BD8800D197CF /* UIDevice+Processor.swift */; };
 		BFDB3418219E4B1700595A62 /* SyncStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB3417219E4B1700595A62 /* SyncStatusViewController.swift */; };
 		BFDD04F11D5E2C27002D450E /* GameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDD04F01D5E2C27002D450E /* GameCollectionViewController.swift */; };
 		BFDE2CD1222DF36A008038E0 /* SwiftyDropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDE2CC8222DF345008038E0 /* SwiftyDropbox.framework */; };
@@ -315,6 +317,7 @@
 		BFAB9F87219A4B670080EC7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFB359412278FD6700CFD920 /* N64DeltaCore_Video.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = N64DeltaCore_Video.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB359422278FD6800CFD920 /* N64DeltaCore_RSP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = N64DeltaCore_RSP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB3645723245A6000CD0EB1 /* LicensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensesViewController.swift; sourceTree = "<group>"; };
 		BFBAB2E21EB685A2004E0B0E /* DeltaCoreProtocol+Delta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeltaCoreProtocol+Delta.swift"; sourceTree = "<group>"; };
 		BFC134E01AAD82460087AD7B /* SNESDeltaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SNESDeltaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC1F2CB22F9515F00606A45 /* CopyDeepLinkActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyDeepLinkActivity.swift; sourceTree = "<group>"; };
@@ -322,6 +325,7 @@
 		BFC6F7B71F435BC500221B96 /* Input+Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input+Display.swift"; sourceTree = "<group>"; };
 		BFC9B7381CEFCD34008629BB /* CheatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheatsViewController.swift; sourceTree = "<group>"; };
 		BFCEA67D1D56FF640061A534 /* UIViewControllerContextTransitioning+Conveniences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+Conveniences.swift"; sourceTree = "<group>"; };
+		BFD1EF3F2336BD8800D197CF /* UIDevice+Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Processor.swift"; sourceTree = "<group>"; };
 		BFDB3417219E4B1700595A62 /* SyncStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncStatusViewController.swift; sourceTree = "<group>"; };
 		BFDD04F01D5E2C27002D450E /* GameCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCollectionViewController.swift; sourceTree = "<group>"; };
 		BFDE2CC6222DF345008038E0 /* Harmony_Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Harmony_Dropbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,7 +340,7 @@
 		BFEF24F21F7DD4FB00454C62 /* SaveStateMigrationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveStateMigrationPolicy.swift; sourceTree = "<group>"; };
 		BFF0742B1E9DC17500ACDF4A /* GBCDeltaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GBCDeltaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA4C081E8A24D600D87934 /* GameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
-		BFFA71D71AAC406100EE9DD1 /* Delta Coofdy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delta Coofdy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFFA71D71AAC406100EE9DD1 /* Delta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFA71DB1AAC406100EE9DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFFA71DC1AAC406100EE9DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFFA71E11AAC406100EE9DD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -398,6 +402,7 @@
 				BF1F45AC21AF57BA00EF9895 /* HarmonyMetadataKey+Keys.swift */,
 				BFFBD3D8224A0756002EFC79 /* URL+ExtendedAttributes.swift */,
 				BF647A6922FB8FCE0061D76D /* Bundle+SwizzleBundleID.swift */,
+				BFD1EF3F2336BD8800D197CF /* UIDevice+Processor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -695,6 +700,7 @@
 				BFAA1FEC1B8AA4FA00495943 /* Settings.swift */,
 				BF5E7F451B9A652600AE44F8 /* Settings.storyboard */,
 				BF5E7F431B9A650B00AE44F8 /* SettingsViewController.swift */,
+				BFB3645723245A6000CD0EB1 /* LicensesViewController.swift */,
 				BF71CF851FE8FFF1001F1613 /* App Icon Shortcuts */,
 				BF11734E1DA32CEC00047DF8 /* Controllers */,
 				BF1DAD5B1D9F574900E752A7 /* Controller Skins */,
@@ -778,7 +784,7 @@
 		BFFA71D81AAC406100EE9DD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BFFA71D71AAC406100EE9DD1 /* Delta Coofdy.app */,
+				BFFA71D71AAC406100EE9DD1 /* Delta.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -877,7 +883,7 @@
 			);
 			name = Delta;
 			productName = Delta;
-			productReference = BFFA71D71AAC406100EE9DD1 /* Delta Coofdy.app */;
+			productReference = BFFA71D71AAC406100EE9DD1 /* Delta.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1026,6 +1032,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFB3645823245A6000CD0EB1 /* LicensesViewController.swift in Sources */,
 				BFC6F7B81F435BC500221B96 /* Input+Display.swift in Sources */,
 				BF59426A1E09BBD00051894B /* GridCollectionViewCell.swift in Sources */,
 				BF6BF3181EB82111008E83CD /* iTunesImportOption.swift in Sources */,
@@ -1071,6 +1078,7 @@
 				BF5942891E09BC8B0051894B /* _GameCollection.swift in Sources */,
 				BF34FA111CF1899D006624C7 /* CheatTextView.swift in Sources */,
 				BF1F45AD21AF57BA00EF9895 /* HarmonyMetadataKey+Keys.swift in Sources */,
+				BFD1EF402336BD8800D197CF /* UIDevice+Processor.swift in Sources */,
 				BF71CF871FE90006001F1613 /* AppIconShortcutsViewController.swift in Sources */,
 				BF1DAD5D1D9F576000E752A7 /* SystemControllerSkinsViewController.swift in Sources */,
 				BFE022A01F5B57FF0052D888 /* PopoverMenuButton.swift in Sources */,
@@ -1317,7 +1325,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coofdylabs.Delta;
-				PRODUCT_NAME = "Delta Coofdy";
+				PRODUCT_NAME = Delta;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = BETA;
@@ -1342,7 +1350,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DIMPACTOR";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coofdylabs.Delta;
-				PRODUCT_NAME = "Delta Coofdy";
+				PRODUCT_NAME = Delta;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Delta/Supporting Files/Delta-Bridging-Header.h";

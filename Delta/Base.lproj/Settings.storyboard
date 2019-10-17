@@ -5,19 +5,20 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Settings-->
         <scene sceneID="N30-Sa-dHo">
             <objects>
-                <tableViewController title="Settings" automaticallyAdjustsScrollViewInsets="NO" id="eHi-aO-uGS" customClass="SettingsViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" automaticallyAdjustsScrollViewInsets="NO" id="eHi-aO-uGS" customClass="SettingsViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="hRw-wV-lch">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delta 0.6.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Str-BY-agW">
-                            <rect key="frame" x="0.0" y="947" width="375" height="64"/>
+                            <rect key="frame" x="0.0" y="1314" width="375" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -296,15 +297,15 @@
                                             <segue destination="R9m-rV-VgV" kind="show" id="MAM-GM-FlH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BadgeCell" textLabel="1u0-gh-zP7" style="IBUITableViewCellStyleDefault" id="JPg-6O-DRe" customClass="BadgedTableViewCell" customModule="Delta_Coofdy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BadgeCell" textLabel="1u0-gh-zP7" style="IBUITableViewCellStyleDefault" id="JPg-6O-DRe" customClass="BadgedTableViewCell" customModule="Delta" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="786" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JPg-6O-DRe" id="zcZ-QR-Nno">
-                                            <rect key="frame" x="0.0" y="0.0" width="356" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sync Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1u0-gh-zP7">
-                                                    <rect key="frame" x="15" y="0.0" width="333" height="44"/>
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -324,11 +325,11 @@
                                         <rect key="frame" x="0.0" y="885.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SSL-t4-QZj" id="hQB-Iy-bzy">
-                                            <rect key="frame" x="0.0" y="0.0" width="356" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="App Icon Shortcuts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c5i-qG-ir9">
-                                                    <rect key="frame" x="15" y="0.0" width="333" height="44"/>
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -338,6 +339,123 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="yXS-6u-1AN" kind="show" id="b79-OK-isV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Patreon" footerTitle="Receive early access to new features and more by becoming a patron." id="fxI-it-j9T">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="6uy-7c-a6W" style="IBUITableViewCellStyleDefault" id="kTU-nT-ZO0">
+                                        <rect key="frame" x="0.0" y="992.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kTU-nT-ZO0" id="l3i-Qe-gBl">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Join the beta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6uy-7c-a6W">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Credits" id="juZ-oh-R2H">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailCell" textLabel="xLH-uv-oGE" detailTextLabel="GPf-wv-lw0" style="IBUITableViewCellStyleValue1" id="Xez-DH-Khe">
+                                        <rect key="frame" x="0.0" y="1120.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xez-DH-Khe" id="UVG-7y-uAm">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Riley Testut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xLH-uv-oGE">
+                                                    <rect key="frame" x="16" y="12" width="88.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Developer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GPf-wv-lw0">
+                                                    <rect key="frame" x="262" y="12" width="78" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailCell" textLabel="0a3-cx-piP" detailTextLabel="879-rX-ATG" style="IBUITableViewCellStyleValue1" id="FQ2-Ht-f1B">
+                                        <rect key="frame" x="0.0" y="1164.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FQ2-Ht-f1B" id="uXj-mE-Jdr">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Caroline Moore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0a3-cx-piP">
+                                                    <rect key="frame" x="16" y="12" width="116.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Graphic Designer" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="879-rX-ATG">
+                                                    <rect key="frame" x="207" y="12" width="133" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailCell" textLabel="r4b-FV-c14" detailTextLabel="nEJ-cQ-BSn" style="IBUITableViewCellStyleValue1" id="1Q0-a4-wXo">
+                                        <rect key="frame" x="0.0" y="1208.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Q0-a4-wXo" id="Hmj-F3-M2S">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Grant Gliner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r4b-FV-c14">
+                                                    <rect key="frame" x="16" y="12" width="92.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Icon Guy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nEJ-cQ-BSn">
+                                                    <rect key="frame" x="272" y="12" width="68" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailCell" textLabel="U6L-LY-zMD" style="IBUITableViewCellStyleDefault" id="4eW-xc-HNT">
+                                        <rect key="frame" x="0.0" y="1252.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4eW-xc-HNT" id="GqO-g3-0vV">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Licenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U6L-LY-zMD">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bl7-bp-PBC" kind="show" id="s44-Rq-aJL"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -372,7 +490,7 @@
         <!--Controls-->
         <scene sceneID="Gi9-m1-y9x">
             <objects>
-                <viewController title="Controls" id="x1g-pH-DnF" customClass="ControllerInputsViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Controls" id="x1g-pH-DnF" customClass="ControllerInputsViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cH1-gu-g2u"/>
                         <viewControllerLayoutGuide type="bottom" id="Z6c-bc-h6l"/>
@@ -444,7 +562,7 @@
         <!--Controllers-->
         <scene sceneID="swa-DT-VKS">
             <objects>
-                <tableViewController id="uBz-mm-mXr" customClass="ControllersSettingsViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="uBz-mm-mXr" customClass="ControllersSettingsViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="hLd-Z5-I3b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -510,7 +628,7 @@
         <!--Game Boy Advance-->
         <scene sceneID="pkL-Te-puh">
             <objects>
-                <tableViewController id="56e-ul-z6v" customClass="SystemControllerSkinsViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="56e-ul-z6v" customClass="SystemControllerSkinsViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fdQ-n7-kUL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -582,7 +700,7 @@
         <!--App Icon Shortcuts-->
         <scene sceneID="e9N-fv-yuQ">
             <objects>
-                <tableViewController id="yXS-6u-1AN" customClass="AppIconShortcutsViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="yXS-6u-1AN" customClass="AppIconShortcutsViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="BGy-Nh-8Yd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -627,13 +745,13 @@
         <!--Controller Skins-->
         <scene sceneID="IN0-an-SWm">
             <objects>
-                <tableViewController title="Controller Skins" id="pG9-hI-tRE" customClass="ControllerSkinsViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Controller Skins" id="pG9-hI-tRE" customClass="ControllerSkinsViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="150" sectionHeaderHeight="18" sectionFooterHeight="18" id="WiB-mC-9xS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="kK3-bl-qxv" customClass="ControllerSkinTableViewCell" customModule="Delta_Coofdy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="kK3-bl-qxv" customClass="ControllerSkinTableViewCell" customModule="Delta" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kK3-bl-qxv" id="7Vt-Nl-Sfx">
@@ -693,18 +811,18 @@
         <!--Grid Menu View Controller-->
         <scene sceneID="Lgi-Ii-M1W">
             <objects>
-                <collectionViewController id="Jpj-e9-6XW" customClass="GridMenuViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="Jpj-e9-6XW" customClass="GridMenuViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yGk-jU-wZQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tLr-UM-1BH" customClass="GridCollectionViewLayout" customModule="Delta_Coofdy" customModuleProvider="target">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tLr-UM-1BH" customClass="GridCollectionViewLayout" customModule="Delta" customModuleProvider="target">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Hef-IR-nMO" customClass="GridCollectionViewCell" customModule="Delta_Coofdy" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Hef-IR-nMO" customClass="GridCollectionViewCell" customModule="Delta" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -764,7 +882,7 @@
         <!--Syncing Service-->
         <scene sceneID="8nM-uV-t0b">
             <objects>
-                <tableViewController title="Syncing Service" id="R9m-rV-VgV" customClass="SyncingServicesViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Syncing Service" id="R9m-rV-VgV" customClass="SyncingServicesViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Zsb-6q-tLe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -912,13 +1030,13 @@
         <!--Sync Status-->
         <scene sceneID="IYe-DI-U7i">
             <objects>
-                <tableViewController title="Sync Status" id="vVg-ci-JRa" customClass="SyncStatusViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Sync Status" id="vVg-ci-JRa" customClass="SyncStatusViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Nza-ON-XbS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="AWh-ik-Gvu" style="IBUITableViewCellStyleDefault" id="wpv-cf-duw" customClass="BadgedTableViewCell" customModule="Delta_Coofdy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="AWh-ik-Gvu" style="IBUITableViewCellStyleDefault" id="wpv-cf-duw" customClass="BadgedTableViewCell" customModule="Delta" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wpv-cf-duw" id="ehC-Qx-Zx4">
@@ -980,7 +1098,7 @@
         <!--Game Sync Status View Controller-->
         <scene sceneID="iQk-cq-qsQ">
             <objects>
-                <tableViewController id="OnX-sX-bHK" customClass="GameSyncStatusViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="OnX-sX-bHK" customClass="GameSyncStatusViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="AFt-Hn-fzR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1021,7 +1139,7 @@
         <!--Record Sync Status View Controller-->
         <scene sceneID="GG8-80-sV4">
             <objects>
-                <tableViewController storyboardIdentifier="recordSyncStatusViewController" id="kBh-Lp-rBr" customClass="RecordSyncStatusViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="recordSyncStatusViewController" id="kBh-Lp-rBr" customClass="RecordSyncStatusViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="k6O-hT-4zC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1234,7 +1352,7 @@
         <!--Versions-->
         <scene sceneID="xaH-AW-NqP">
             <objects>
-                <tableViewController id="PGW-Yp-czd" customClass="RecordVersionsViewController" customModule="Delta_Coofdy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="PGW-Yp-czd" customClass="RecordVersionsViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="9fJ-qb-tfO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1326,6 +1444,131 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJV-tR-yMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5046" y="1182"/>
+        </scene>
+        <!--Licenses-->
+        <scene sceneID="YWA-Bw-j1U">
+            <objects>
+                <viewController id="bl7-bp-PBC" customClass="LicensesViewController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J02-OP-dBp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acq-Qg-w5k">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <edgeInsets key="layoutMargins" top="8" left="30" bottom="8" right="30"/>
+                                <string key="text">Delta and AltStore LLC are in no way affiliated with Nintendo Co., Ltd.
+
+Stephen Celis (SQLite.swift)
+Copyright (c) 2014-2015 Stephen Celis (&lt;stephen@stephencelis.com&gt;)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Olivier Poitrey (SDWebImage)
+Copyright (c) 2009-2018 Olivier Poitrey rs@dailymotion.com
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+Thomas Zoechling (ZIPFoundation)
+Copyright (c) 2017 Thomas Zoechling
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Dropbox Inc. (SwiftyDropbox)
+Copyright (c) 2015 Dropbox Inc., http://www.dropbox.com/
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Google (Google API Objective-C Client)
+Licensed under Apache 2 license.
+
+Nick Farina (SMCalloutView)
+Licensed under Apache 2 license.
+
+Delta uses these emulator cores licensed under the GNU Public License version 2:
+
+Nestopia
+Snes9x
+mupen64plus
+Gambatte
+visualboyadvance-m
+DeSmuME
+
+Delta uses OpenVGDB to provide automatic artwork for imported games.</string>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="acq-Qg-w5k" firstAttribute="trailing" secondItem="maj-5d-Nf4" secondAttribute="trailing" id="GwF-Oj-BmU"/>
+                            <constraint firstAttribute="bottom" secondItem="acq-Qg-w5k" secondAttribute="bottom" id="ObY-Af-DTN"/>
+                            <constraint firstItem="acq-Qg-w5k" firstAttribute="leading" secondItem="maj-5d-Nf4" secondAttribute="leading" id="YaE-Ml-9Ve"/>
+                            <constraint firstItem="acq-Qg-w5k" firstAttribute="top" secondItem="J02-OP-dBp" secondAttribute="top" id="tlB-wE-SDz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="maj-5d-Nf4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Licenses" largeTitleDisplayMode="never" id="epi-5M-Fjh"/>
+                    <connections>
+                        <outlet property="textView" destination="acq-Qg-w5k" id="Kd5-Rf-lXg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Spp-tc-3RZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2513" y="2606"/>
         </scene>
     </scenes>
     <resources>
