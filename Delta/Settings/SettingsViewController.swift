@@ -21,6 +21,7 @@ private extension SettingsViewController
         case controllerSkins
         case controllerOpacity
         case hapticFeedback
+        case reduceVolume
         case syncing
         case threeDTouch
         case patreon
@@ -55,6 +56,8 @@ class SettingsViewController: UITableViewController
     
     @IBOutlet private var buttonHapticFeedbackEnabledSwitch: UISwitch!
     @IBOutlet private var thumbstickHapticFeedbackEnabledSwitch: UISwitch!
+    
+    @IBOutlet weak var reduceVolumeEnabledSwitch: UISwitch!
     
     @IBOutlet private var versionLabel: UILabel!
     
@@ -168,7 +171,9 @@ private extension SettingsViewController
         
         self.buttonHapticFeedbackEnabledSwitch.isOn = Settings.isButtonHapticFeedbackEnabled
         self.thumbstickHapticFeedbackEnabledSwitch.isOn = Settings.isThumbstickHapticFeedbackEnabled
-        
+
+        self.reduceVolumeEnabledSwitch.isOn = Settings.isReduceVolumeEnabled
+
         self.tableView.reloadData()
     }
     
@@ -229,7 +234,12 @@ private extension SettingsViewController
     {
         Settings.isThumbstickHapticFeedbackEnabled = sender.isOn
     }
-    
+
+    @IBAction func toggleReduceVolumeEnabled(_ sender: UISwitch)
+    {
+        Settings.isReduceVolumeEnabled = sender.isOn
+    }
+
     func openTwitter(username: String)
     {
         let twitterAppURL = URL(string: "twitter://user?screen_name=" + username)!
@@ -272,7 +282,7 @@ private extension SettingsViewController
                 self.tableView.selectRow(at: selectedIndexPath, animated: true, scrollPosition: .none)
             }
             
-        case .localControllerPlayerIndex, .preferredControllerSkin, .translucentControllerSkinOpacity, .isButtonHapticFeedbackEnabled, .isThumbstickHapticFeedbackEnabled: break
+        case .localControllerPlayerIndex, .preferredControllerSkin, .translucentControllerSkinOpacity, .isButtonHapticFeedbackEnabled, .isThumbstickHapticFeedbackEnabled, .isReduceVolumeEnabled: break
         }
     }
 
@@ -345,7 +355,7 @@ extension SettingsViewController
             case .service: break
             }
             
-        case .controllerOpacity, .hapticFeedback, .threeDTouch, .patreon, .credits: break
+        case .controllerOpacity, .hapticFeedback, .reduceVolume, .threeDTouch, .patreon, .credits: break
         }
 
         return cell
@@ -360,7 +370,7 @@ extension SettingsViewController
         {
         case .controllers: self.performSegue(withIdentifier: Segue.controllers.rawValue, sender: cell)
         case .controllerSkins: self.performSegue(withIdentifier: Segue.controllerSkins.rawValue, sender: cell)
-        case .controllerOpacity, .hapticFeedback, .threeDTouch, .syncing: break
+        case .controllerOpacity, .hapticFeedback, .reduceVolume, .threeDTouch, .syncing: break
         case .patreon:
             let patreonURL = URL(string: "altstore://patreon")!
             

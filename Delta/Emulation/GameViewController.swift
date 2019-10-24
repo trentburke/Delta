@@ -1022,7 +1022,7 @@ private extension GameViewController
             
         case .translucentControllerSkinOpacity: self.controllerView.translucentControllerSkinOpacity = Settings.translucentControllerSkinOpacity
             
-        case .syncingService: break
+        case .syncingService, .isReduceVolumeEnabled: break
         }
     }
     

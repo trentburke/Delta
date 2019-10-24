@@ -35,6 +35,7 @@ extension Settings
         case syncingService
         case isButtonHapticFeedbackEnabled
         case isThumbstickHapticFeedbackEnabled
+        case isReduceVolumeEnabled
     }
 }
 
@@ -55,6 +56,7 @@ struct Settings
                         #keyPath(UserDefaults.gameShortcutsMode): GameShortcutsMode.recent.rawValue,
                         #keyPath(UserDefaults.isButtonHapticFeedbackEnabled): true,
                         #keyPath(UserDefaults.isThumbstickHapticFeedbackEnabled): true,
+                        #keyPath(UserDefaults.isReduceVolumeEnabled): true,
                         #keyPath(UserDefaults.sortSaveStatesByOldestFirst): true] as [String : Any]
         UserDefaults.standard.register(defaults: defaults)
     }
@@ -168,7 +170,18 @@ extension Settings
             NotificationCenter.default.post(name: .settingsDidChange, object: nil, userInfo: [NotificationUserInfoKey.name: Name.isThumbstickHapticFeedbackEnabled])
         }
     }
-    
+
+    static var isReduceVolumeEnabled: Bool {
+        get {
+            let isEnabled = UserDefaults.standard.isReduceVolumeEnabled
+            return isEnabled
+        }
+        set {
+            UserDefaults.standard.isReduceVolumeEnabled = newValue
+            NotificationCenter.default.post(name: .settingsDidChange, object: nil, userInfo: [NotificationUserInfoKey.name: Name.isReduceVolumeEnabled])
+        }
+    }
+
     static var sortSaveStatesByOldestFirst: Bool {
         set { UserDefaults.standard.sortSaveStatesByOldestFirst = newValue }
         get {
@@ -279,6 +292,8 @@ private extension UserDefaults
     
     @NSManaged var isButtonHapticFeedbackEnabled: Bool
     @NSManaged var isThumbstickHapticFeedbackEnabled: Bool
-    
+
+    @NSManaged var isReduceVolumeEnabled: Bool
+
     @NSManaged var sortSaveStatesByOldestFirst: Bool
 }
