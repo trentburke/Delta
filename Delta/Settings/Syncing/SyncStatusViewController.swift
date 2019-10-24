@@ -92,7 +92,7 @@ private extension SyncStatusViewController
             }
             else
             {
-                let activityIndicatorView = UIActivityIndicatorView(style: .gray)
+                let activityIndicatorView = UIActivityIndicatorView(style: .white)
                 activityIndicatorView.startAnimating()
                 
                 cell.accessoryType = .none

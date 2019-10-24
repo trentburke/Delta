@@ -38,6 +38,9 @@ extension SystemControllerSkinsViewController
         super.viewDidLoad()
         
         self.title = self.system.localizedShortName
+        
+        self.portraitImageView.activityIndicatorView.color = .white
+        self.landscapeImageView.activityIndicatorView.color = .white
     }
     
     override func viewDidDisappear(_ animated: Bool)
