@@ -53,7 +53,8 @@ class SettingsViewController: UITableViewController
 {
     @IBOutlet private var controllerOpacityLabel: UILabel!
     @IBOutlet private var controllerOpacitySlider: UISlider!
-    
+    @IBOutlet private var controllerOpacityLabelWidthConstraint: NSLayoutConstraint!
+
     @IBOutlet private var buttonHapticFeedbackEnabledSwitch: UISwitch!
     @IBOutlet private var thumbstickHapticFeedbackEnabledSwitch: UISwitch!
     
@@ -97,6 +98,12 @@ class SettingsViewController: UITableViewController
             #else
             self.versionLabel.text = NSLocalizedString("Delta", comment: "")
             #endif
+        }
+
+        resizeOpacityLabelWidth()
+
+        NotificationCenter.default.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: nil, queue: nil) { (Notification) in
+            self.resizeOpacityLabelWidth()
         }
     }
     
@@ -147,6 +154,12 @@ class SettingsViewController: UITableViewController
             let system = System.registeredSystems[indexPath.row]
             systemControllerSkinsViewController.system = system
         }
+    }
+
+    fileprivate func resizeOpacityLabelWidth() {
+        let fontMetrics = UIFontMetrics(forTextStyle: .body)
+        let scaledWidth = fontMetrics.scaledValue(for: 50)
+        self.controllerOpacityLabelWidthConstraint.constant = scaledWidth
     }
 }
 
