@@ -62,7 +62,7 @@
 		BF48F74E219A16DA00BC2FC1 /* SyncingServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF48F74D219A16DA00BC2FC1 /* SyncingServicesViewController.swift */; };
 		BF48F755219A1EF000BC2FC1 /* Harmony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF48F754219A1EEB00BC2FC1 /* Harmony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BF48F756219A1EF000BC2FC1 /* Harmony.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF48F754219A1EEB00BC2FC1 /* Harmony.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF48F75B219A1F8A00BC2FC1 /* Harmony_Drive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF48F75A219A1F8300BC2FC1 /* Harmony_Drive.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		BF48F75B219A1F8A00BC2FC1 /* Harmony_Drive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF48F75A219A1F8300BC2FC1 /* Harmony_Drive.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BF48F75C219A1F8A00BC2FC1 /* Harmony_Drive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF48F75A219A1F8300BC2FC1 /* Harmony_Drive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF525EE81FF5F370004AA849 /* DeepLinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF525EE71FF5F370004AA849 /* DeepLinkController.swift */; };
 		BF525EEA1FF6CD12004AA849 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF525EE91FF6CD12004AA849 /* DeepLink.swift */; };
@@ -1320,10 +1320,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KHSNQKXT55;
+                CURRENT_PROJECT_VERSION = 16;
+                DEVELOPMENT_TEAM = KHSNQKXT55;
 				INFOPLIST_FILE = "Delta/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coofdylabs.Delta;
 				PRODUCT_NAME = Delta;
@@ -1349,7 +1350,7 @@
 				DEVELOPMENT_TEAM = KHSNQKXT55;
 				INFOPLIST_FILE = "Delta/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DIMPACTOR";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coofdylabs.Delta;
 				PRODUCT_NAME = Delta;
