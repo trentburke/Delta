@@ -157,6 +157,10 @@ class SettingsViewController: UITableViewController
     }
 
     fileprivate func resizeOpacityLabelWidth() {
+        let pointSize  = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize
+        controllerOpacityLabel.font = UIFont.monospacedDigitSystemFont(ofSize: pointSize, weight: .regular)
+        controllerOpacityLabel.adjustsFontForContentSizeCategory = true
+
         let fontMetrics = UIFontMetrics(forTextStyle: .body)
         let scaledWidth = fontMetrics.scaledValue(for: 50)
         self.controllerOpacityLabelWidthConstraint.constant = scaledWidth
