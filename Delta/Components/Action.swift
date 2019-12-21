@@ -69,6 +69,21 @@ extension UIPreviewAction
     }
 }
 
+@available(iOS 13.0, *)
+extension UIAction
+{
+    convenience init?(_ action: Action)
+    {
+        if action.style == .cancel {
+            return nil
+        }
+
+        self.init(title: action.title) { _ in
+            action.action?(action)
+        }
+    }
+}
+
 extension UIAlertController
 {
     convenience init(actions: [Action])
@@ -91,6 +106,12 @@ extension RangeReplaceableCollection where Iterator.Element == Action
     
     var previewActions: [UIPreviewAction] {
         let actions = self.compactMap { UIPreviewAction($0) }
+        return actions
+    }
+
+    @available(iOS 13.0, *)
+    var hapticPreviewActions: [UIAction] {
+        let actions = self.compactMap { UIAction($0) }
         return actions
     }
 }

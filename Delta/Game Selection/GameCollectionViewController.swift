@@ -68,6 +68,8 @@ class GameCollectionViewController: UICollectionViewController
     
     private var _gameCellSourceView: UIView?
     private var _gameCellSourceRect: CGRect?
+    
+    private var gameVC: PreviewGameViewController!
 
     required init?(coder aDecoder: NSCoder)
     {
@@ -687,6 +689,76 @@ private extension GameCollectionViewController
         self.present(alertController, animated: true, completion: nil)
     }
 }
+
+// MARK: - Haptic Touch
+
+@available(iOS 13.0, *)
+extension GameCollectionViewController {
+    override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        if self.gameVC != nil {
+            return nil
+        }
+        
+        let game = self.dataSource.item(at: indexPath)
+        let menuConfig = UIContextMenuConfiguration.init(identifier: nil, previewProvider: { () -> UIViewController? in
+
+            self.gameVC = PreviewGameViewController()
+            self.gameVC.game = game
+
+            if let previewSaveState = game.previewSaveState
+            {
+                self.gameVC.previewSaveState = previewSaveState
+                self.gameVC.previewImage = UIImage(contentsOfFile: previewSaveState.imageFileURL.path)
+            }
+
+            let width = CGFloat(320)
+            let originalSize = self.gameVC.preferredContentSize
+            self.gameVC.preferredContentSize = CGSize(width: width, height: width / (originalSize.width / originalSize.height))
+            
+            return self.gameVC
+        }) { (suggestedActions) -> UIMenu? in
+            let actions = self.actions(for: game).hapticPreviewActions
+            return UIMenu(title: game.name, image: nil, identifier: nil, options: [], children: actions)
+        }
+        
+        return menuConfig
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
+        animator.addCompletion {
+            let game = self.gameVC.game as! Game
+
+            self.gameVC.pauseEmulation()
+
+            let indexPath = self.dataSource.fetchedResultsController.indexPath(forObject: game)!
+
+            let fileURL = FileManager.default.uniqueTemporaryURL()
+            self.activeSaveState = self.gameVC.emulatorCore?.saveSaveState(to: fileURL)
+
+            self.gameVC.emulatorCore?.stop()
+
+            self._performing3DTouchTransition = true
+
+            self.launchGame(at: indexPath, clearScreen: true, ignoreAlreadyRunningError: true)
+
+            do
+            {
+                try FileManager.default.removeItem(at: fileURL)
+            }
+            catch
+            {
+                print(error)
+            }
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, previewForDismissingContextMenuWithConfiguration configuration: UIContextMenuConfiguration) -> UITargetedPreview? {
+        self.gameVC.emulatorCore?.stop()
+        self.gameVC = nil
+        return nil
+    }
+}
+
 
 //MARK: - UIViewControllerPreviewingDelegate -
 /// UIViewControllerPreviewingDelegate

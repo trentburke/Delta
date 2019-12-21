@@ -113,15 +113,7 @@ extension PreviewGameViewController
         
         if previousState == .stopped, state == .running
         {
-            self.emulatorCoreQueue.sync {
-                if self.isAppearing
-                {
-                    // Pause to prevent it from starting before visible (in case user peeked slowly)
-                    self.emulatorCore?.pause()
-                }
-                
-                self.preparePreview()
-            }
+            self.preparePreview()
         }
     }
 }
