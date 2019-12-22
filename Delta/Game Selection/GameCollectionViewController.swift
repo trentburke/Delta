@@ -500,7 +500,12 @@ private extension GameCollectionViewController
         let importController = ImportController(documentTypes: [kUTTypeImage as String])
         importController.delegate = self
         importController.importOptions = [clipboardImportOption, photoLibraryImportOption, gamesDatabaseImportOption]
-        self.present(importController, animated: true, completion: nil)
+        self.present(importController, animated: true, popoverSetup: { popoverController in
+            popoverController.sourceView = self._gameCellSourceView
+            if let sourceRect = self._gameCellSourceRect {
+                popoverController.sourceRect = sourceRect
+            }
+        }, completion: nil)
     }
     
     func changeArtwork(for game: Game, toImageAt url: URL?, errors: [Error])
@@ -630,7 +635,7 @@ private extension GameCollectionViewController
         
         let importController = ImportController(documentTypes: [kUTTypeItem as String])
         importController.delegate = self
-        self.present(importController, animated: true, completion: nil)
+        self.present(importController, animated: true, popoverSetup: nil, completion: nil)
     }
     
     func importSaveFile(for game: Game, from fileURL: URL?, error: Error?)

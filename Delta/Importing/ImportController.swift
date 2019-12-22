@@ -61,7 +61,7 @@ class ImportController: NSObject
         super.init()
     }
     
-    fileprivate func presentImportController(from presentingViewController: UIViewController, animated: Bool, completionHandler: (() -> Void)?)
+    fileprivate func presentImportController(from presentingViewController: UIViewController, animated: Bool, popoverSetup: ((UIPopoverPresentationController) -> ())?, completionHandler: (() -> Void)?)
     {
         self.presentingViewController = presentingViewController
         
@@ -83,7 +83,7 @@ class ImportController: NSObject
             alertController.addAction(filesAction)
             
             if let popoverController = alertController.popoverPresentationController {
-                popoverController.barButtonItem = presentingViewController.navigationItem.rightBarButtonItem
+                popoverSetup?(popoverController)
             }
             
             self.presentedViewController = alertController
@@ -201,10 +201,10 @@ extension UIViewController
         }
     }
     
-    func present(_ importController: ImportController, animated: Bool, completion: (() -> Void)?)
+    func present(_ importController: ImportController, animated: Bool, popoverSetup: ((UIPopoverPresentationController) -> ())?, completion: (() -> Void)?)
     {
         self.importController = importController
         
-        importController.presentImportController(from: self, animated: animated, completionHandler: completion)
+        importController.presentImportController(from: self, animated: animated, popoverSetup: popoverSetup, completionHandler: completion)
     }
 }

@@ -367,7 +367,9 @@ extension GamesViewController: ImportControllerDelegate
         let importController = ImportController(documentTypes: documentTypes)
         importController.delegate = self
         importController.importOptions = [itunesImportOption]
-        self.present(importController, animated: true, completion: nil)
+        self.present(importController, animated: true, popoverSetup: { popoverController in
+            popoverController.barButtonItem = self.navigationItem.rightBarButtonItem
+        }, completion: nil)
     }
     
     func importController(_ importController: ImportController, didImportItemsAt urls: Set<URL>, errors: [Error])
