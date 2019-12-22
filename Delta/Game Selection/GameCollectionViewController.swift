@@ -710,6 +710,9 @@ extension GameCollectionViewController {
             return nil
         }
         
+        self._gameCellSourceView = self.collectionView.cellForItem(at: indexPath)?.contentView
+        self._gameCellSourceRect = collectionView.layoutAttributesForItem(at: indexPath)?.bounds
+        
         let game = self.dataSource.item(at: indexPath)
         let menuConfig = UIContextMenuConfiguration.init(identifier: nil, previewProvider: { () -> UIViewController? in
 
