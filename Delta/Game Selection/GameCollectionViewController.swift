@@ -70,6 +70,7 @@ class GameCollectionViewController: UICollectionViewController
     private var _gameCellSourceRect: CGRect?
     
     private var gameVC: PreviewGameViewController!
+    private var isTappingThroughToPreview: Bool = false
 
     required init?(coder aDecoder: NSCoder)
     {
@@ -739,6 +740,7 @@ extension GameCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
+        isTappingThroughToPreview = true
         animator.addCompletion {
             let game = self.gameVC.game as! Game
 
@@ -763,12 +765,16 @@ extension GameCollectionViewController {
             {
                 print(error)
             }
+
+            self.isTappingThroughToPreview = false
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, previewForDismissingContextMenuWithConfiguration configuration: UIContextMenuConfiguration) -> UITargetedPreview? {
-        self.gameVC.emulatorCore?.stop()
-        self.gameVC = nil
+        if !isTappingThroughToPreview {
+            self.gameVC.emulatorCore?.stop()
+            self.gameVC = nil
+        }
         return nil
     }
 }
