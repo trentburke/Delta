@@ -43,6 +43,7 @@ extension Action
 struct Action
 {
     let title: String
+    let image: UIImage?
     let style: Style
     let action: ((Action) -> Void)?
 }
@@ -78,8 +79,14 @@ extension UIAction
             return nil
         }
 
-        self.init(title: action.title) { _ in
-            action.action?(action)
+        if action.style == .destructive {
+            self.init(title: action.title, image: action.image, attributes: .destructive) { _ in
+                action.action?(action)
+            }
+        } else {
+            self.init(title: action.title, image: action.image) { _ in
+                action.action?(action)
+            }
         }
     }
 }

@@ -381,31 +381,42 @@ private extension GameCollectionViewController
 //MARK: - Game Actions -
 private extension GameCollectionViewController
 {
+    func safelyGetImage(for symbol:String, pointSize:CGFloat, weight:NSInteger, scale:NSInteger) -> UIImage {
+        var image: UIImage
+        if #available(iOS 13.0, *) {
+            let imgConfig = UIImage.SymbolConfiguration(pointSize: pointSize, weight: UIImage.SymbolWeight(rawValue: weight)!, scale: UIImage.SymbolScale(rawValue: scale)!)
+            image = UIImage(systemName: symbol, withConfiguration: imgConfig)!
+        } else {
+            image = UIImage()
+        }
+        return image;
+    }
+    
     func actions(for game: Game) -> [Action]
     {
-        let cancelAction = Action(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, action: nil)
+        let cancelAction = Action(title: NSLocalizedString("Cancel", comment: ""), image: safelyGetImage(for: "multiply", pointSize: 0, weight: 7, scale: 1), style: .cancel, action: nil)
         
-        let renameAction = Action(title: NSLocalizedString("Rename", comment: ""), style: .default, action: { [unowned self] action in
+        let renameAction = Action(title: NSLocalizedString("Rename", comment: ""), image: safelyGetImage(for: "pencil", pointSize: 0, weight: 7, scale: 1), style: .default, action: { [unowned self] action in
             self.rename(game)
         })
         
-        let changeArtworkAction = Action(title: NSLocalizedString("Change Artwork", comment: ""), style: .default) { [unowned self] action in
+        let changeArtworkAction = Action(title: NSLocalizedString("Change Artwork", comment: ""), image: safelyGetImage(for: "photo", pointSize: 0, weight: 7, scale: 1), style: .default) { [unowned self] action in
             self.changeArtwork(for: game)
         }
         
-        let shareAction = Action(title: NSLocalizedString("Share", comment: ""), style: .default, action: { [unowned self] action in
+        let shareAction = Action(title: NSLocalizedString("Share", comment: ""), image: safelyGetImage(for: "square.and.arrow.up", pointSize: 0, weight: 7, scale: 1), style: .default, action: { [unowned self] action in
             self.share(game)
         })
         
-        let saveStatesAction = Action(title: NSLocalizedString("Save States", comment: ""), style: .default, action: { [unowned self] action in
+        let saveStatesAction = Action(title: NSLocalizedString("Save States", comment: ""), image: safelyGetImage(for: "square.stack.3d.up.fill", pointSize: 0, weight: 7, scale: 1), style: .default, action: { [unowned self] action in
             self.viewSaveStates(for: game)
         })
         
-        let importSaveFile = Action(title: NSLocalizedString("Import Save File", comment: ""), style: .default) { [unowned self] _ in
+        let importSaveFile = Action(title: NSLocalizedString("Import Save File", comment: ""), image: safelyGetImage(for: "square.and.arrow.down", pointSize: 0, weight: 7, scale: 1), style: .default) { [unowned self] _ in
             self.importSaveFile(for: game)
         }
         
-        let deleteAction = Action(title: NSLocalizedString("Delete", comment: ""), style: .destructive, action: { [unowned self] action in
+        let deleteAction = Action(title: NSLocalizedString("Delete", comment: ""), image: safelyGetImage(for: "trash", pointSize: 0, weight: 7, scale: 1), style: .destructive, action: { [unowned self] action in
             self.delete(game)
         })
         

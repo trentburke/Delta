@@ -484,24 +484,24 @@ private extension SaveStatesViewController
         {
             if saveState.game?.previewSaveState != saveState
             {
-                let previewAction = Action(title: NSLocalizedString("Set as Preview Save State", comment: ""), style: .default, action: { [unowned self] action in
+                let previewAction = Action(title: NSLocalizedString("Set as Preview Save State", comment: ""), image: nil, style: .default, action: { [unowned self] action in
                     self.updatePreviewSaveState(saveState)
                 })
                 actions.append(previewAction)
             }
             else
             {
-                let previewAction = Action(title: NSLocalizedString("Remove as Preview Save State", comment: ""), style: .default, action: { [unowned self] action in
+                let previewAction = Action(title: NSLocalizedString("Remove as Preview Save State", comment: ""), image: nil, style: .default, action: { [unowned self] action in
                     self.updatePreviewSaveState(nil)
                 })
                 actions.append(previewAction)
             }
         }
         
-        let cancelAction = Action(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, action: nil)
+        let cancelAction = Action(title: NSLocalizedString("Cancel", comment: ""), image: nil, style: .cancel, action: nil)
         actions.append(cancelAction)
         
-        let renameAction = Action(title: NSLocalizedString("Rename", comment: ""), style: .default, action: { [unowned self] action in
+        let renameAction = Action(title: NSLocalizedString("Rename", comment: ""), image: nil, style: .default, action: { [unowned self] action in
             self.renameSaveState(saveState)
         })
         actions.append(renameAction)
@@ -511,19 +511,19 @@ private extension SaveStatesViewController
         case .auto: break
         case .quick: break
         case .general:
-            let lockAction = Action(title: NSLocalizedString("Lock", comment: ""), style: .default, action: { [unowned self] action in
+            let lockAction = Action(title: NSLocalizedString("Lock", comment: ""), image: nil, style: .default, action: { [unowned self] action in
                 self.lockSaveState(saveState)
             })
             actions.append(lockAction)
             
         case .locked:
-            let unlockAction = Action(title: NSLocalizedString("Unlock", comment: ""), style: .default, action: { [unowned self] action in
+            let unlockAction = Action(title: NSLocalizedString("Unlock", comment: ""), image: nil, style: .default, action: { [unowned self] action in
                 self.unlockSaveState(saveState)
             })
             actions.append(unlockAction)
         }
         
-        let deleteAction = Action(title: NSLocalizedString("Delete", comment: ""), style: .destructive, action: { [unowned self] action in
+        let deleteAction = Action(title: NSLocalizedString("Delete", comment: ""), image: nil, style: .destructive, action: { [unowned self] action in
             self.deleteSaveState(saveState)
         })
         actions.append(deleteAction)
