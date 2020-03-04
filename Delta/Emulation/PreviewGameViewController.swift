@@ -41,7 +41,8 @@ class PreviewGameViewController: DeltaCore.GameViewController
             
             emulatorCore.addObserver(self, forKeyPath: #keyPath(EmulatorCore.state), options: [.old], context: &kvoContext)
             
-            self.preferredContentSize = emulatorCore.preferredRenderingSize
+            let size = CGSize(width: emulatorCore.preferredRenderingSize.width * 2.0, height: emulatorCore.preferredRenderingSize.height * 2.0)
+            self.preferredContentSize = size
         }
     }
     
@@ -75,7 +76,7 @@ extension PreviewGameViewController
         super.viewDidAppear(animated)
         
         self.emulatorCoreQueue.async {
-            self.emulatorCore?.resume()
+            self.emulatorCore?.start()
         }
     }
     
@@ -113,7 +114,11 @@ extension PreviewGameViewController
         
         if previousState == .stopped, state == .running
         {
-            self.preparePreview()
+            self.emulatorCoreQueue.async {
+                // Pause to prevent it from starting before visible (in case user peeked slowly)
+                self.emulatorCore?.pause()
+                self.preparePreview()
+            }
         }
     }
 }
@@ -164,5 +169,7 @@ private extension PreviewGameViewController
         
         // Re-enable emulatorCore to update gameView again
         self.emulatorCore?.add(self.gameView)
+        
+        self.emulatorCore?.resume()
     }
 }
