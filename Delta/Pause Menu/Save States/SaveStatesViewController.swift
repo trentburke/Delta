@@ -774,7 +774,9 @@ extension SaveStatesViewController
     
     override func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating)
     {
-        self.commitPreviewTransition()
+        animator.addCompletion {
+            self.commitPreviewTransition()
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, previewForHighlightingContextMenuWithConfiguration configuration: UIContextMenuConfiguration) -> UITargetedPreview?
