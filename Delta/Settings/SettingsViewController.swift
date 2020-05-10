@@ -85,6 +85,9 @@ class SettingsViewController: UITableViewController
     {
         super.viewDidLoad()
         
+        tableView.sectionFooterHeight = UITableView.automaticDimension
+        tableView.estimatedSectionFooterHeight = 64
+        
         if let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
         {
             #if LITE
