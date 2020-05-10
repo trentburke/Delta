@@ -13,7 +13,10 @@ import GBADeltaCore
 import GBCDeltaCore
 import NESDeltaCore
 import N64DeltaCore
-import DSDeltaCore
+import MelonDSDeltaCore
+
+// Legacy Cores
+import struct DSDeltaCore.DS
 
 enum System: CaseIterable
 {
@@ -27,6 +30,10 @@ enum System: CaseIterable
     static var registeredSystems: [System] {
         let systems = System.allCases.filter { Delta.registeredCores.keys.contains($0.gameType) }
         return systems
+    }
+    
+    static var allCores: [DeltaCoreProtocol] {
+        return [NES.core, SNES.core, N64.core, GBC.core, GBA.core, DS.core, MelonDS.core]
     }
 }
 
@@ -79,11 +86,11 @@ extension System
         case .n64: return N64.core
         case .gbc: return GBC.core
         case .gba: return GBA.core
-        case .ds: return DS.core
+        case .ds: return Settings.preferredCore(for: .ds) ?? MelonDS.core
         }
     }
     
-    var gameType: GameType {
+    var gameType: DeltaCore.GameType {
         switch self
         {
         case .nes: return .nes
@@ -95,7 +102,7 @@ extension System
         }
     }
     
-    init?(gameType: GameType)
+    init?(gameType: DeltaCore.GameType)
     {
         switch gameType
         {
@@ -110,7 +117,7 @@ extension System
     }
 }
 
-extension GameType
+extension DeltaCore.GameType
 {
     init?(fileExtension: String)
     {

@@ -24,6 +24,7 @@ private extension SettingsViewController
         case reduceVolume
         case syncing
         case threeDTouch
+        case cores
         case patreon
         case credits
     }
@@ -32,6 +33,7 @@ private extension SettingsViewController
     {
         case controllers = "controllersSegue"
         case controllerSkins = "controllerSkinsSegue"
+        case dsSettings = "dsSettingsSegue"
     }
 
     enum SyncingRow: Int, CaseIterable
@@ -153,6 +155,8 @@ class SettingsViewController: UITableViewController
             
             let system = System.registeredSystems[indexPath.row]
             preferredControllerSkinsViewController.system = system
+            
+        case Segue.dsSettings: break
         }
     }
 
@@ -372,6 +376,10 @@ extension SettingsViewController
             case .service: break
             }
             
+        case .cores:
+            let preferredCore = Settings.preferredCore(for: .ds)
+            cell.detailTextLabel?.text = preferredCore?.metadata?.name.value ?? preferredCore?.name ?? NSLocalizedString("Unknown", comment: "")
+            
         case .controllerOpacity, .hapticFeedback, .reduceVolume, .threeDTouch, .patreon, .credits: break
         }
 
@@ -387,6 +395,7 @@ extension SettingsViewController
         {
         case .controllers: self.performSegue(withIdentifier: Segue.controllers.rawValue, sender: cell)
         case .controllerSkins: self.performSegue(withIdentifier: Segue.controllerSkins.rawValue, sender: cell)
+        case .cores: self.performSegue(withIdentifier: Segue.dsSettings.rawValue, sender: cell)
         case .controllerOpacity, .hapticFeedback, .reduceVolume, .threeDTouch, .syncing: break
         case .patreon:
             let patreonURL = URL(string: "altstore://patreon")!
