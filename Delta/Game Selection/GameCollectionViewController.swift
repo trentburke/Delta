@@ -66,6 +66,8 @@ class GameCollectionViewController: UICollectionViewController
     private weak var _previewTransitionViewController: PreviewGameViewController?
     private weak var _previewTransitionDestinationViewController: UIViewController?
     
+    private var shouldStartAtReducedAudio = false
+    
     private var _renameAction: UIAlertAction?
     private var _changingArtworkGame: Game?
     private var _importingSaveFileGame: Game?
@@ -172,9 +174,12 @@ extension GameCollectionViewController
             let game = self.dataSource.item(at: indexPath)
             
             destinationViewController.game = game
-            
+
+            destinationViewController.emulatorCore?.shouldStartAtReducedAudio = shouldStartAtReducedAudio
+
             if let saveState = self.activeSaveState
             {
+                
                 // Must be synchronous or else there will be a flash of black
                 destinationViewController.emulatorCore?.start()
                 destinationViewController.emulatorCore?.pause()
@@ -299,6 +304,8 @@ private extension GameCollectionViewController
                 {
                     self.activeEmulatorCore?.gameViews.forEach { $0.inputImage = nil }
                 }
+                
+                shouldStartAtReducedAudio = true
                 
                 let cell = self.collectionView.cellForItem(at: indexPath)
                 self.performSegue(withIdentifier: "unwindFromGames", sender: cell)
@@ -828,6 +835,8 @@ extension GameCollectionViewController: UIViewControllerPreviewingDelegate
         gameViewController.emulatorCore?.stop()
         
         _performingPreviewTransition = true
+
+        shouldStartAtReducedAudio = true
         
         self.launchGame(at: indexPath, clearScreen: true, ignoreAlreadyRunningError: true)
         

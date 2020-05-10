@@ -681,6 +681,8 @@ extension SaveStatesViewController: UIViewControllerPreviewingDelegate
         {
             gameViewController.emulatorCore?.stop()
             
+            gameViewController.emulatorCore?.shouldStartAtReducedAudio = true
+
             self.loadSaveState(saveState)
             
             do
