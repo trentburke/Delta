@@ -471,6 +471,12 @@ private extension GameCollectionViewController
     func delete(_ game: Game)
     {
         let confirmationAlertController = UIAlertController(title: NSLocalizedString("Are you sure you want to delete this game? All associated data, such as saves, save states, and cheat codes, will also be deleted.", comment: ""), message: nil, preferredStyle: .actionSheet)
+        if let popoverController = confirmationAlertController.popoverPresentationController {
+            popoverController.sourceView = self._gameCellSourceView
+            if let sourceRect = self._gameCellSourceRect {
+                popoverController.sourceRect = sourceRect
+            }
+        }
         confirmationAlertController.addAction(UIAlertAction(title: NSLocalizedString("Delete Game", comment: ""), style: .destructive, handler: { action in
             
             DatabaseManager.shared.performBackgroundTask { (context) in
