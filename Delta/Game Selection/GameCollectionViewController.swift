@@ -940,6 +940,9 @@ extension GameCollectionViewController
             let previewViewController = self.makePreviewGameViewController(for: game)
             self._previewTransitionViewController = previewViewController
             
+            self._gameCellSourceView = collectionView.cellForItem(at: indexPath)?.contentView
+            self._gameCellSourceRect = collectionView.layoutAttributesForItem(at: indexPath)?.bounds
+             
             return previewViewController
         }) { suggestedActions in
             return UIMenu(title: "", children: actions.menuActions)
