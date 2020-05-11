@@ -1119,6 +1119,8 @@ private extension GameViewController
             }
         }
         
+        self.emulatorCore?.shouldStartAtReducedAudio = true
+        
         if let pauseViewController = self.pauseViewController
         {
             let segue = UIStoryboardSegue(identifier: "unwindFromPauseMenu", source: pauseViewController, destination: self)
