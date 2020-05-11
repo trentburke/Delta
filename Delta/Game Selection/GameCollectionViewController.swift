@@ -63,7 +63,7 @@ class GameCollectionViewController: UICollectionViewController
     private let prototypeCell = GridCollectionViewCell()
     
     private var _performingPreviewTransition = false
-    private weak var _previewTransitionViewController: PreviewGameViewController?
+//    private weak var _previewTransitionViewController: PreviewGameViewController?
     private weak var _previewTransitionDestinationViewController: UIViewController?
     
     private var shouldStartAtReducedAudio = false
@@ -800,13 +800,13 @@ extension GameCollectionViewController: UIViewControllerPreviewingDelegate
         let game = self.dataSource.item(at: indexPath)
         
         let gameViewController = self.makePreviewGameViewController(for: game)
-        _previewTransitionViewController = gameViewController
+//        _previewTransitionViewController = gameViewController
         return gameViewController
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController)
     {
-        self.commitPreviewTransition()
+//        self.commitPreviewTransition()
     }
     
     func makePreviewGameViewController(for game: Game) -> PreviewGameViewController
@@ -826,19 +826,17 @@ extension GameCollectionViewController: UIViewControllerPreviewingDelegate
         return gameViewController
     }
     
-    func commitPreviewTransition()
+    func commitPreviewTransition(with previewController: PreviewGameViewController)
     {
-        guard let gameViewController = _previewTransitionViewController else { return }
-        
-        let game = gameViewController.game as! Game
-        gameViewController.pauseEmulation()
+        let game = previewController.game as! Game
+        previewController.pauseEmulation()
         
         let indexPath = self.dataSource.fetchedResultsController.indexPath(forObject: game)!
 
         let fileURL = FileManager.default.uniqueTemporaryURL()
-        self.activeSaveState = gameViewController.emulatorCore?.saveSaveState(to: fileURL)
+        self.activeSaveState = previewController.emulatorCore?.saveSaveState(to: fileURL)
         
-        gameViewController.emulatorCore?.stop()
+        previewController.emulatorCore?.stop()
         
         _performingPreviewTransition = true
 
@@ -944,7 +942,6 @@ extension GameCollectionViewController
             guard let self = self else { return nil }
                         
             let previewViewController = self.makePreviewGameViewController(for: game)
-            self._previewTransitionViewController = previewViewController
             
             self._gameCellSourceView = collectionView.cellForItem(at: indexPath)?.contentView
             self._gameCellSourceRect = collectionView.layoutAttributesForItem(at: indexPath)?.bounds
@@ -958,7 +955,7 @@ extension GameCollectionViewController
     override func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating)
     {
         animator.addCompletion {
-            self.commitPreviewTransition()
+            self.commitPreviewTransition(with: animator.previewViewController as! PreviewGameViewController)
         }
     }
     
@@ -984,7 +981,6 @@ extension GameCollectionViewController
     
     override func collectionView(_ collectionView: UICollectionView, previewForDismissingContextMenuWithConfiguration configuration: UIContextMenuConfiguration) -> UITargetedPreview?
     {
-        _previewTransitionViewController = nil
         return self.collectionView(collectionView, previewForHighlightingContextMenuWithConfiguration: configuration)
     }
 }
