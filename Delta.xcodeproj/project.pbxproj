@@ -887,7 +887,7 @@
 					};
 					BFFA71D61AAC406100EE9DD1 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = KHSNQKXT55;
+						DevelopmentTeam = 9DCCQ46JS6;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1329,13 +1329,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-                CURRENT_PROJECT_VERSION = 23;
-                DEVELOPMENT_TEAM = KHSNQKXT55;
+				CURRENT_PROJECT_VERSION = 23;
+				DEVELOPMENT_TEAM = 9DCCQ46JS6;
 				INFOPLIST_FILE = "Delta/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.2b2;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coofdylabs.Delta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trentburke.Delta;
 				PRODUCT_NAME = Delta;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1360,12 +1360,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 23;
-				DEVELOPMENT_TEAM = KHSNQKXT55;
+				DEVELOPMENT_TEAM = 9DCCQ46JS6;
 				INFOPLIST_FILE = "Delta/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.2b2;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DIMPACTOR";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coofdylabs.Delta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trentburke.Delta;
 				PRODUCT_NAME = Delta;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
