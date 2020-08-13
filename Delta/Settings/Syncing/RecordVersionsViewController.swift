@@ -364,6 +364,7 @@ private extension RecordVersionsViewController
         alertController.addAction(UIAlertAction(title: actionTitle, style: .destructive) { (action) in
             self.restoreVersion()
         })
+        alertController.popoverPresentationController?.barButtonItem = sender
         
         self.present(alertController, animated: true, completion: nil)
     }

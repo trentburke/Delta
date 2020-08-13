@@ -84,6 +84,8 @@ class ImportController: NSObject
             
             if let popoverController = alertController.popoverPresentationController {
                 popoverSetup?(popoverController)
+                popoverController.sourceView = presentingViewController.view
+                popoverController.sourceRect = presentingViewController.view.bounds
             }
             
             self.presentedViewController = alertController

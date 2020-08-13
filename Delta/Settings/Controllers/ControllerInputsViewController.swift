@@ -403,6 +403,7 @@ private extension ControllerInputsViewController
         alertController.addAction(UIAlertAction(title: NSLocalizedString("Reset Controls to Defaults", comment: ""), style: .destructive, handler: { (action) in
             reset()
         }))
+        alertController.popoverPresentationController?.barButtonItem = sender
         self.present(alertController, animated: true, completion: nil)
     }
 }

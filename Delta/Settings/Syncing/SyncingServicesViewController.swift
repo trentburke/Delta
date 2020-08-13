@@ -176,6 +176,10 @@ extension SyncingServicesViewController
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Change Sync Service", comment: ""), style: .destructive, handler: { (action) in
                     self.changeService(to: syncingService)
                 }))
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    alertController.popoverPresentationController?.sourceView = cell
+                    alertController.popoverPresentationController?.sourceRect = cell.bounds
+                }
                 
                 self.present(alertController, animated: true, completion: nil)
             }
@@ -209,6 +213,10 @@ extension SyncingServicesViewController
                         }
                     }
                 })
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    alertController.popoverPresentationController?.sourceView = cell
+                    alertController.popoverPresentationController?.sourceRect = cell.bounds
+                }
                 
                 self.present(alertController, animated: true, completion: nil)
             }
